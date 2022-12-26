@@ -1,0 +1,57 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Selecter para todos os elementos: */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/****************************************************************/
+/*                          Text Styles
+/****************************************************************/
+* {
+  color: #ffffff;
+}
+
+.login {
+  /****************************************************************/
+  /*                          Content
+  /****************************************************************/
+}
+.login .pg-header {
+  background-color: #24262b;
+  height: 10%;
+}
+.login .pg-content {
+  height: 80%;
+  background-color: rgba(36, 38, 43, 0.6392156863);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login .pg-footer {
+  background-color: #24262b;
+  height: 10%;
+}
+.login #background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+/*# sourceMappingURL=login.css.map */

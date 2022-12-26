@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manipulação da Fertilidade</title>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="assets/css/styles.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/modal.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/form.css" rel="stylesheet" type="text/css">
+</head>
+<body class="page">
+<header class="pg-header">
+	<div class="topnav">
+		<div class="dropdown" id="menu">
+			<a aria-expanded="false" class="btn btn-secondary dropdown-toggle linkable" data-bs-toggle="dropdown"
+			   href="#fertilidade" role="button"> Ξ Manipulação da Fertilidade </a>
+			<ul class="dropdown-menu">
+				<li>
+					<a class="dropdown-item linkable" href="#historia">📚 História</a>
+				</li>
+				<li>
+					<a class="dropdown-item linkable" href="#o_que">🔬 O que é?</a>
+				</li>
+				<li>
+					<a class="dropdown-item" href="pages/tecnicas.html"> 🏥 Técnicas de Reprodução Humanamente
+						Assistidas </a>
+				</li>
+				<li>
+					<a class="dropdown-item linkable" href="#conselhos">🦉 Conselhos</a>
+				</li>
+				<li class="dropdown dropend">
+					<a aria-expanded="false" aria-haspopup="true" class="dropdown-item dropdown-toggle unlinkable"
+					   data-bs-toggle="dropdown" href="#">🔎 Fatores de Infertilidade
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="dropdown-item" href="pages/fatores/fatoresF.html">👩 Femininos</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="pages/fatores/fatoresM.html">🧑 Masculinos</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a class="dropdown-item linkable" href="#quiz">🎲 Quiz</a>
+				</li>
+			</ul>
+		</div>
+		<ul class="breadcrumb">
+			<li>
+				<a class="dropdown-item" href="pages/area_reservada.html">Perfil</a>
+			</li>
+		</ul>
+		<ul class="breadcrumb-utilizador">
+			<li>
+				<img class="perfil-thumbnail" id="img"/>
+			</li>
+			<li>
+				<div id="username"></div>
+			</li>
+		</ul>
+		<div id="date"></div>
+	</div>
+</header>
+<div class="pg-content">
+	<div class="content fertilidade">
+		<h1>Manipulação da Fertilidade</h1>
+	</div>
+	<div class="content historia">
+		<h1>História</h1>
+		<table>
+			<tr class="spaceUnder">
+				<td>Miriam Friedman Menkin nasceu a 8 de agosto de 1901 e faleceu a 8 de junho de 1992 , foi uma
+					cientista norte-americana que ficou famosa pela sua pesquisa sobre fertilização in vitro (FIV).
+				</td>
+				<td>
+					<img class="center" src="https://mujeresconciencia.com/app/uploads/2022/06/menkin.jpg"
+					     style="width: 30%;">
+				</td>
+			</tr>
+			<tr class="spaceUnder">
+				<td>1978 nascimento do primeiro "bebê de proveta", Louise Brown no Reino Unido.</td>
+				<td>
+					<img class="center"
+					     src="http://c.files.bbci.co.uk/3EC7/production/_107317061_gettyimages-1151376836.jpg">
+				</td>
+			</tr>
+			<tr class="spaceUnder">
+				<td>Registos de 1991 a 2014, estimam que nasceram mais de oito milhões de bebés no mundo através das
+					diferentes técnicas de procriação medicamente assistida
+				</td>
+				<td>
+					<img class="center"
+					     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjDX8DTa2TSRQ6f4NVHlYOFVTT5OBypX3VfQ&usqp=CAU">
+				</td>
+			</tr>
+			<tr class="spaceUnder">
+				<td>Em 1992, é introduzida a microinjecção intracitoplasmática de espermatozóides também conhecida por
+					ICSI.
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="content o_que">
+		<div class="text">
+			<h1> O que é? </h1>
+			<p> Atualmente, existem métodos contracetivos de grande eficácia e também processos de reprodução assistida
+				que permitem a casais com certos problemas de fertilidade procriarem.</p>
+			<p>A infertilidade é a incapacidade de conceber uma criança após dois anos de atividade sexual regular sem
+				uso de contracetivos.</p>
+			<p>Estatísticas mundiais apontam que cerca de 15% dos casais que desejam engravidar não conseguem.</p>
+			<img class="center" src="https://www.grupohpa.com/uploads/media/c913e595180c00813f9281938c3ebab3.jpg">
+			<br>
+			<form id="Calculo">
+				<div>
+					<label><b>1º dia da menstruação</b></label>
+					<div class="form-control">
+						<input id="data" type="date">
+					</div>
+					<label><b>Tamanho do ciclo em dias(média)</b></label>
+					<div class="form-control">
+						<select id="ciclo">
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+							<option value="25">25</option>
+							<option value="26">26</option>
+							<option value="27">27</option>
+							<option value="28">28</option>
+							<option value="29">29</option>
+							<option value="31">31</option>
+							<option value="32">32</option>
+							<option value="33">33</option>
+							<option value="34">34</option>
+							<option value="35">35</option>
+						</select>
+					</div>
+
+					<div>
+						<p>Próxima ovulação: <span id="ovulacao"></span></p>
+						<p>Período fértil: <span id="fertil"></span></p>
+					</div>
+					<button onclick="calcularperiodo(document.getElementById('profile-form'));" type="submit">Calcular
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="content conselhos">
+		<h1>Conselhos e perspetivas diferentes</h1>
+		<div class="text">
+			<br>
+			<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+			        allowfullscreen class="center" frameborder="0" height="315"
+			        src="https://www.youtube-nocookie.com/embed/7Sce6d3R9v0" title="YouTube video player"
+			        width="560"></iframe>
+			<br>
+			<br>
+			<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+			        allowfullscreen class="center" frameborder="0" height="315"
+			        src="https://www.youtube-nocookie.com/embed/n7ZOeub_qgE" title="YouTube video player"
+			        width="560"></iframe>
+			<br>
+			<br>
+			<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+			        allowfullscreen class="center" frameborder="0" height="315"
+			        src="https://www.youtube-nocookie.com/embed/xLPkuzZtOVM" title="YouTube video player"
+			        width="560"></iframe>
+			<br>
+			<br>
+		</div>
+	</div>
+</div>
+<footer class="footer">
+</footer>
+
+<script type="application/javascript">
+	// https://stackoverflow.com/questions/15799514/why-does-javascript-getmonth-count-from-0-and-getdate-count-from-1
+	var meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho",
+		"Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+
+	function calcularperiodo() {
+		var fim = new Date(document.getElementById('data').value);
+		fim.setDate(fim.getUTCDate() + 14);
+		console.log(fim)
+		var inicio = new Date(document.getElementById('data').value);
+		inicio.setDate(inicio.getUTCDate() + 11)
+		console.log(inicio)
+		console.log(fim)
+
+		inicio = inicio.getUTCDate() + ' de ' + meses[inicio.getUTCMonth()] + ' de ' + inicio.getUTCFullYear()
+		fim = fim.getUTCDate() + ' de ' + meses[fim.getUTCMonth()] + ' de ' + fim.getUTCFullYear()
+
+		var fertil = document.getElementById('fertil')
+		fertil.innerHTML = inicio + ' a ' + fim
+
+		var ovulacao = document.getElementById('ovulacao')
+		var data = new Date(document.getElementById('data').value)
+		data.setDate(data.getUTCDate() + 13);
+		ovulacao.innerHTML = data.getUTCDate() + ' de ' + meses[data.getUTCMonth()] + ' de ' + data.getUTCFullYear()
+	}
+</script>
+
+<!--START OF SCRIPTS-->
+<script src="assets/scripts/cookies.js" type="application/javascript"></script>
+<script src="assets/scripts/page.js" type="application/javascript"></script>
+<!--END OF SCRIPTS-->
+
+<video autoplay id="background-video" loop muted>
+	<source src="assets/background.mp4" type="video/mp4">
+	Your browser does not support HTML5 video.
+</video>
+</body>
+</html>

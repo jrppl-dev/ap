@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manipulação da Fertilidade</title>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="../assets/css/styles.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/form.css" rel="stylesheet" type="text/css">
+</head>
+<body onload="preencherDados(document.getElementById('profile-form'), true)">
+<header class="pg-header">
+	<div class="topnav">
+		<a aria-expanded="false" class="btn btn-secondary btn-return linkable" href="../index.html" role="button"
+		   style="">
+			↩
+		</a>
+		<div id="date"></div>
+		<ul class="breadcrumb">
+			<a href="#area">Profile</a>
+		</ul>
+	</div>
+</header>
+<div class="pg-content">
+	<div class="container form profile">
+		<h1>Perfil</h1>
+		<div class="content-form">
+			<form action="area_reservada/editar.html" id="profile-form">
+				<div>
+					<label><b>Imagem</b></label>
+					<div class="form-control">
+						<span><img alt="User" class="imagem-thumbnail" src="../assets/img/profile/img2.png"></span>
+					</div>
+					<label><b>Nome</b></label>
+					<div class="form-control">
+						<input disabled name="username" type="text">
+					</div>
+					<label><b>Sexo</b></label>
+					<div class="form-control">
+						<span>Feminino</span>
+						<input disabled name="genero" type="radio" value="f">
+						<span>Masculino</span>
+						<input disabled name="genero" type="radio" value="m">
+					</div>
+					<label><b>Idade</b></label>
+					<div class="form-control">
+						<input disabled name="idade" placeholder="" type="text">
+					</div>
+					<label><b>Signo</b></label>
+					<div class="form-control">
+						<select disabled name="signo">
+							<option value="">Vazio</option>
+							<option value="car">Carneiro ♈︎</option>
+							<option value="tou">Touro ♉︎</option>
+							<option value="gem">Gémeos ♊︎</option>
+							<option value="car">Caranguejo ♋︎</option>
+							<option value="lea">Leão ♌︎</option>
+							<option value="vir">Virgem ♍︎</option>
+							<option value="bal">Balança ♎︎</option>
+							<option value="esc">Escorpião ♏︎</option>
+							<option value="sag">Sagitário ♐︎</option>
+							<option value="cap">Capricórnio ♑︎</option>
+							<option value="aqu">Aquarios ♒︎</option>
+							<option value="pei">Peixes ♓︎</option>
+						</select>
+					</div>
+					<label><b>Razões pelas quais está a visitar este site:</b></label>
+					<div class="form-control">
+						<input disabled name="r1" type="checkbox">
+						<span>Procuro informações sobre técnicas de reprodução humanamente assistidas</span>
+					</div>
+					<div class="form-control">
+						<input disabled name="r2" type="checkbox">
+						<span>Procuro informação sobre causas de infertilidade femininas</span>
+					</div>
+					<div class="form-control">
+						<input disabled name="r3" type="checkbox">
+						<span>É um tema que acho interessante </span>
+					</div>
+					<button type="submit">Editar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<footer class="footer">
+
+</footer>
+
+<!--Janela-->
+
+<!--START OF SCRIPTS-->
+<script src="../assets/scripts/cookies.js" type="application/javascript"></script>
+<script src="../assets/scripts/page.js" type="application/javascript"></script>
+<script src="../assets/scripts/profile.js" type="application/javascript"></script>
+<!--END OF SCRIPTS-->
+
+<video id="background-video">
+	<source src="../assets/background.mp4" type="video/mp4">
+	Your browser does not support HTML5 video.
+</video>
+</body>
+</html>

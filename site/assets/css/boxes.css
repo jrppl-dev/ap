@@ -1,0 +1,228 @@
+/****************************************************************/
+/*                           Boxes                              */
+/****************************************************************/
+
+.box_container {
+    max-width: 1200px;
+    margin: 100px auto;
+    position: relative;
+    width: 1200px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_container .box {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 25px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.box_container .box .fill-div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+.box_container .box:hover {
+    transition: 1s;
+    transform: scale(1.2);
+    font-size: 36px;
+}
+
+.box_container .box .box-content {
+    position: relative;
+    width: 80%;
+    margin-left: 40px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.box_container .box:hover .box-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+.box_container .box .box-content h3 {
+    font-size: 32px;
+}
+
+.box_container .box .box-content p {
+    font-size: 18px;
+    padding-bottom: 10px;
+    padding-block-end: 10px;
+}
+
+
+/****************************************************************/
+/*                   Backgrounds Boxes                          */
+/****************************************************************/
+
+/****************************************************************/
+/*                       Tecnicas                               */
+/****************************************************************/
+#fecundacao_in_vitro {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/fertilizacao_in_vitro.jpg');
+    background-size: cover;
+    background-position: 50%;
+    color: aliceblue;
+}
+
+#barriga {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/Tecnicas/Barriga_de_aluguer/box-barriga-de-aluguer.jpg');
+    background-size: cover;
+    color: aliceblue;
+}
+
+#injecao {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/Tecnicas/ICSI/injecao.jpg');
+    background-size: cover;
+    background-position: 50%;
+    color: aliceblue;
+}
+
+#ovodoacao {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/Tecnicas/Ovodoacao/ovodoacao-box.jpeg');
+    background-size: cover;
+    background-position: 50%;
+    color: aliceblue;
+}
+
+#transferencia {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/Tecnicas/Transferencia/Transferencia-box.jpeg');
+    background-size: cover;
+    background-position: 50%;
+    color: aliceblue;
+}
+
+#surrogate {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/Tecnicas/Surrogate/surrogate-box.jpeg');
+    background-size: cover;
+    background-position: 50%;
+    color: aliceblue;
+}
+
+/****************************************************************/
+/*                   Factores Femininos                         */
+/****************************************************************/
+/* TODO : mudar de links para caminhos dentro da pasta img */
+#endometriose {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://cbncuritiba.com.br/wp-content/uploads/2022/07/post-endometriose-ism-670x446-1.jpg);
+    background-size: cover;
+    background-position: 50%;
+    color: aliceblue;
+}
+
+#miomas {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://i0.wp.com/materprime.com.br/wp-content/uploads/2022/03/Cirurgia_de_mioma.jpg);
+    background-size: cover;
+    background-position: 50%;
+    color: aliceblue;
+}
+
+#pcos {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://rsaude.com.br/img/noticias/g/sindrome-dos-ovarios-policisticos-27082018105831.jpg);
+    background-size: cover;
+    background-position: 50%;
+    color: aliceblue;
+}
+
+#alteracoes_tubarias {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://www.farmagente.com.br/wp-content/uploads/2020/07/200724_infertilidade_background.jpg);
+    background-size: cover;
+    background-position: 50%;
+    color: aliceblue;
+}
+
+#idade {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://s2.glbimg.com/Ezpyhmi66gNPOQjSmcUOZKLmaek=/0x0:825x464/984x0/smart/filters:strip_icc/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2018/T/g/obs23LR5SPzpiZMPUDRQ/bbcexameum.jpg);
+    background-size: cover;
+    background-position: 50%;
+    color: aliceblue;
+}
+
+#fatores_ovulatorios {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://www.draanaluizacardoso.com.br/wp-content/uploads/2020/10/DAL-29102020-post-blog-sindrome-ovario-policistico.jpg);
+    background-size: cover;
+    background-position: 50%;
+    color: aliceblue;
+}
+
+#fatores_uterinos {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://vitallogy-bkt1.s3.sa-east-1.amazonaws.com/images/1276/1119.jpeg);
+    background-size: cover;
+    background-position: 50%;
+    color: aliceblue;
+}
+
+#disturbios {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://www.unidos.com.br/wp-content/uploads/2020/10/UNIDOS-Disturbios-hormonais-conheca-8-sinais-blog-post.jpg);
+    background-size: cover;
+    background-position: 50%;
+    color: aliceblue;
+}
+
+#habitos_f {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://clinicasim.com/novo/wp-content/uploads/2016/09/5-habitos-saudaveis.jpg);
+    background-size: cover;
+    background-position: 50%;
+    color: aliceblue;
+}
+
+
+/****************************************************************/
+/*                   Factores Masculinos                        */
+/****************************************************************/
+#varicocelo {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/FatoresMasculinos/Varicocelo/varicocele-bilateral_unilateral.jpg');
+    background-repeat: no-repeat;
+    background-size: 400px 400px;
+    background-position: 65%;
+    color: aliceblue;
+}
+
+#habitos_m {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/FatoresMasculinos/Habitos/habitos.jpeg');
+    background-size: cover;
+    background-position: 50%;
+    color: aliceblue;
+}
+
+#genetica {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/FatoresMasculinos/Genetica/genetica.jpg');
+    background-size: cover;
+    background-position: 50%;
+    color: aliceblue;
+}
+
+#criptorquidia {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/FatoresMasculinos/Criptoquirdia/criptorquidia.png');
+    background-size: 400px 400px;
+    background-position: 50%;
+    color: aliceblue;
+}
+
+#traumas {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/FatoresMasculinos/Traumas/trauma.jpeg');
+    background-size: cover;
+    background-position: 50%;
+    color: aliceblue;
+}
+
+#azooespermia {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/FatoresMasculinos/Azooespermia/azoo_box.jpg');
+    background-size: 400px 400px;
+    background-position: 50%;
+    color: aliceblue;
+}
+
