@@ -10,6 +10,7 @@ form.onsubmit = function (event) {
     var inputs = form.getElementsByTagName('input')
     for (var i = 0; i < inputs.length; i++) {
         inputs[i].closest('.form-control').style.display = 'none'
+        inputs[i].disabled = true;
     }
     correcta1.closest('.form-control').style.display = 'block'
     correcta2.closest('.form-control').style.display = 'block'
@@ -30,6 +31,28 @@ form.onsubmit = function (event) {
     document.querySelector('#quizform input[name="resposta5"]:checked').closest('.form-control').style.display = 'block'
     document.querySelector('#quizform button[type="submit"]').style.display = 'none'
     document.querySelector('#quizform #recomecarbtn').style.display = 'block'
+
+    var correctas = 0;
+    if (correcta1.checked) {
+        correctas = correctas + 1;
+    }
+    if (correcta2.checked) {
+        correctas = correctas + 1;
+    }
+    if (correcta3.checked) {
+        correctas = correctas + 1;
+    }
+    if (correcta4.checked) {
+        correctas = correctas + 1;
+    }
+    if (correcta5.checked) {
+        correctas = correctas + 1;
+    }
+    document.querySelector('#resultados').innerHTML = '<h1>Resultados</h1>' + '<div>' +
+        'Voçê acertou ' + correctas + ' de 5 perguntas' +
+        '</div>'
+    document.querySelector('#resultados').style.display = 'block'
+    document.querySelector('#razao').style.display = 'block'
 }
 
 /**
