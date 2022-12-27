@@ -23,6 +23,19 @@ form input[type=text], input[type=number], input[type=password], input[type=date
   border-radius: 10px;
 }
 
+form hr {
+  margin: 20px auto;
+}
+form span {
+  font-size: 14px;
+}
+form label {
+  font-size: 18px !important;
+}
+form .form-control {
+  margin: 10px auto;
+}
+
 form button {
   border-radius: 10px;
   background-color: #04AA6D;

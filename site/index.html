@@ -48,7 +48,7 @@
 		</div>
 		<ul class="breadcrumb">
 			<li>
-				<a class="dropdown-item" href="pages/area_reservada.html">Perfil</a>
+				<a class="dropdown-item" href="../index.html">Log out</a>
 			</li>
 		</ul>
 		<ul class="breadcrumb-utilizador">
@@ -56,7 +56,7 @@
 				<img class="perfil-thumbnail" id="img"/>
 			</li>
 			<li>
-				<div id="username"></div>
+				<a href="pages/area_reservada.html" id="username"></a>
 			</li>
 		</ul>
 		<div id="date"></div>
@@ -115,7 +115,7 @@
 				<div>
 					<label><b>1º dia da menstruação</b></label>
 					<div class="form-control">
-						<input id="data" type="date">
+						<input id="data" required type="date">
 					</div>
 					<label><b>Tamanho do ciclo em dias(média)</b></label>
 					<div class="form-control">
@@ -171,6 +171,114 @@
 			<br>
 		</div>
 	</div>
+	<div class="content quiz">
+		<h1>Quiz</h1>
+		<form id="quizform">
+			<div>
+				<label>
+					<b>Qual é a técnica mais indicada para homens com baixa concentração de
+						espermatozoides?
+					</b>
+				</label>
+				<div class="form-control">
+					<input name="resposta1" required type="radio" value="1">
+					<span>Injeção intracitoplasmatica</span>
+				</div>
+				<div class="form-control">
+					<input name="resposta1" required type="radio" value="2">
+					<span>FIV</span>
+				</div>
+				<div class="form-control">
+					<input name="resposta1" required type="radio" value="3">
+					<span>Inseminação artificial </span>
+				</div>
+				<div class="form-control">
+					<input name="resposta1" required type="radio" value="4">
+					<span>Ovodoacao </span>
+				</div>
+				<hr>
+
+				<h3>Para resolver o problema de infertilidade de um casal cuja a mulher tenha as trompas
+					obstruidas aconselha-se:</h3>
+				<label>Tratamento hormonal</label>
+				<div class="form-control">
+					<input name="resposta2" required type="radio" value="1">
+					<span>A técnica de FIV</span>
+				</div>
+				<div class="form-control">
+					<input name="resposta2" required type="radio" value="2">
+					<span>A técnica da ICSI</span>
+				</div>
+				<div class="form-control">
+					<input name="resposta2" required type="radio" value="3">
+					<span>A indução da ovulação</span>
+				</div>
+				<hr>
+
+				<label>
+					Mencione qual a técnica utilizada ,após a fecundação artificial, para transferir o embrião para o
+					útero
+				</label>
+				<div class="form-control">
+					<input name="resposta3" required type="radio" value="1">
+					<span>Barriga de aluguer </span>
+				</div>
+				<div class="form-control">
+					<input name="resposta3" required type="radio" value="2">
+					<span>Ovodaçao</span>
+				</div>
+				<div class="form-control">
+					<input name="resposta3" required type="radio" value="3">
+					<span>FIV</span>
+				</div>
+				<div class="form-control">
+					<input name="resposta3" required type="radio" value="4">
+					<span>Injeção intracitoplasmatica</span>
+				</div>
+				<hr>
+
+				<label>
+					Quais os sintomas da síndrome do ovário políquistico ?
+				</label>
+				<div class="form-control">
+					<input name="resposta4" required type="radio" value="1">
+					<span>Dores de barriga</span>
+				</div>
+				<div class="form-control">
+					<input name="resposta4" required type="radio" value="2">
+					<span>Dores em urinar </span>
+				</div>
+				<div class="form-control">
+					<input name="resposta4" required type="radio" value="3">
+					<span>Hirsutismo</span>
+				</div>
+				<div class="form-control">
+					<input name="resposta4" required type="radio" value="4">
+					<span>Cansaço</span>
+				</div>
+				<hr>
+
+				<label>
+					O problema de infertilidade num casal é sempre tratável ?
+				</label>
+				<div class="form-control">
+					<input name="resposta5" required type="radio" value="1">
+					<span>Verdadeiro</span>
+				</div>
+				<div class="form-control">
+					<input name="resposta5" required type="radio" value="2">
+					<span>Falso</span>
+				</div>
+				<hr>
+				<button type="submit">
+					Submeter
+				</button>
+				<button id="recomecarbtn" style="display: none">
+					Recomeçar
+				</button>
+			</div>
+		</form>
+	</div>
 </div>
 <footer class="footer">
 </footer>
@@ -205,6 +313,7 @@
 <!--START OF SCRIPTS-->
 <script src="assets/scripts/cookies.js" type="application/javascript"></script>
 <script src="assets/scripts/page.js" type="application/javascript"></script>
+<script src="assets/scripts/quiz.js" type="application/javascript"></script>
 <!--END OF SCRIPTS-->
 
 <video autoplay id="background-video" loop muted>

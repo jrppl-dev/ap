@@ -190,7 +190,7 @@ body .pg-content {
 body .content {
   display: none;
   background-color: rgba(0, 0, 0, 0.3098039216);
-  padding: 36px 0px;
+  padding: 36px 40px;
   border-radius: 10px;
 }
 body .content:first-of-type {
