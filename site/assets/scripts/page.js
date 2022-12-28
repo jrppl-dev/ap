@@ -83,11 +83,14 @@ function refreshClock() {
  * Personalizar a página com os dados do utilizador
  */
 function startUserPreferences() {
+    if (!getCookie('img') || !getCookie('img').toString().includes('.png')) {
+        setCookie('img', 'img1.png')
+    }
     /** Actualizar nome utilizador */
     if (document.getElementById('username')) {
         document.getElementById('username').innerHTML = getCookie('username')
     }
-    /** Actualizar imagem thumbnail utilizador */
+    /** Atualizar imagem thumbnail utilizador */
     if (document.getElementById('img')) {
         document.getElementById('img').src = document.getElementById('img').src + 'assets/img/profile/' + getCookie('img')
     }
