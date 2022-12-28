@@ -30,9 +30,15 @@ function preencherDados(form, actualizar)
     form.r3.checked = false;
     if (getCookie("r1") == 'true') {
         form.r1.checked = true;
+        if (form.r1.closest('.form-control').querySelector('.help')) {
+            form.r1.closest('.form-control').querySelector('.help').style.display = 'block';
+        }
     }
     if (getCookie("r2") == 'true') {
         form.r2.checked = true;
+        if (form.r2.closest('.form-control').querySelector('.help')) {
+            form.r2.closest('.form-control').querySelector('.help').style.display = 'block';
+        }
     }
     if (getCookie("r3") == 'true') {
         form.r3.checked = true;

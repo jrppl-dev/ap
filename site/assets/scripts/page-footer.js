@@ -3,6 +3,10 @@
  * https://www.w3schools.com/js/tryit.asp?filename=tryjs_templates_multiline
  */
 function adicionarFooter() {
+    if (!document.querySelector('.footer')) {
+        return;
+    }
+
     document.querySelector('.footer').innerHTML = `
  <div class="container">
    <div class="row">
@@ -60,6 +64,9 @@ function adicionarFooter() {
 function adicionarFooterLinks() {
     const links = document.querySelectorAll('#menu .dropdown-item:not(.dropdown-toggle)');
     const footerLinks = document.getElementById('footer-links')
+    if (!footerLinks) {
+        return;
+    }
     let html = '';
     for (let i = 0; i < links.length; i++) {
         const link = links[i];
