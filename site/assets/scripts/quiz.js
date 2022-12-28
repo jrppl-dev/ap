@@ -9,9 +9,9 @@ const form = document.getElementById('quizform')
 const maxTentativas = 3;
 /**
  * https://www.w3schools.com/jsref/jsref_parseint.asp
+ * https://stackoverflow.com/questions/7540397/convert-nan-to-0-in-javascript
  */
-let tentativas = parseInt(getCookie('tentativas')) + 1;
-
+let tentativas = getCookie('tentativas') || 1;
 document.getElementById('counter').innerHTML = `
     ${tentativas} de ${maxTentativas}
     `;
@@ -58,13 +58,13 @@ form.onsubmit = function (event) {
         <h1>✨✨✨✨✨</h1>
         <h2>Voçê acertou ${correct} de 5 perguntas</h2>  
         `;
-        setCookie('tentativas', 0)
+        setCookie('tentativas', 1)
         document.querySelector('#quizform button[type="submit"]').style.display = 'none'
         document.querySelector('#quizform #recomecarbtn').style.display = 'block'
         return
     }
 
-    if (tentativas >= maxTentativas) {
+    if (tentativas > maxTentativas) {
         /**
          * Mostrar resultado
          */
@@ -90,6 +90,7 @@ form.onsubmit = function (event) {
     document.querySelector('#quizform #recomecarbtn').style.display = 'block'
     window.scrollTo({top: 0, behavior: 'smooth'});
     tentativas++;
+    setCookie('tentativas', tentativas)
 }
 
 /**
@@ -98,7 +99,7 @@ form.onsubmit = function (event) {
 document.querySelector('#recomecarbtn').onclick = function () {
     window.scrollTo({top: 0, behavior: 'smooth'});
     if (tentativas > maxTentativas) {
-        setCookie('tentativas', 0)
+        setCookie('tentativas', 1)
     }
 
     location.reload();

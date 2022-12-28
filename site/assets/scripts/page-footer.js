@@ -46,7 +46,9 @@ function adicionarFooter() {
        <h4>Comentário:</h4>
        <form>
          <label for="Comentário"></label>
+         <div class="form-control">
          <textarea cols="50" form="usrform" name="comment" rows="6" placeholder="Mensagem"></textarea>
+         </div>
          <input type="submit" value="Enviar">
        </form>
      </div>
