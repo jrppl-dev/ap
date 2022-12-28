@@ -14,10 +14,6 @@ body {
 
 
 body {
-  .container {
-    max-width: 1200px;
-    margin: auto;
-  }
 
   .row {
     display: flex;
@@ -211,6 +207,7 @@ body {
     background-color: #0000004f;
     padding: 36px 40px;
     border-radius: 10px;
+    transition:height 1s ease-in-out;
   }
 
   .content:first-of-type {

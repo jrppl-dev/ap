@@ -37,10 +37,6 @@ body {
   /*                          Text Styles
   /****************************************************************/
 }
-body .container {
-  max-width: 1200px;
-  margin: auto;
-}
 body .row {
   display: flex;
   flex-wrap: wrap;
@@ -192,6 +188,7 @@ body .content {
   background-color: rgba(0, 0, 0, 0.3098039216);
   padding: 36px 40px;
   border-radius: 10px;
+  transition: height 1s ease-in-out;
 }
 body .content:first-of-type {
   display: block;

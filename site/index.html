@@ -172,9 +172,15 @@
 		</div>
 	</div>
 	<div class="content quiz">
-		<h1>Quiz</h1>
+		<h1>Quiz <span id="counter" style="  font-size: 18px;text-decoration: underline;"></span></h1>
+
+		<div id="resultados"
+		     style="text-align: center;border: thin solid white;border-radius: 10px;margin-bottom: 30px;background-color: #00c3ff3b;"
+		>
+		</div>
+
 		<form id="quizform">
-			<div>
+			<div id="perguntas">
 				<label>
 					<b>Qual é a técnica mais indicada para homens com baixa concentração de
 						espermatozoides?
@@ -200,17 +206,20 @@
 
 				<h3>Para resolver o problema de infertilidade de um casal cuja a mulher tenha as trompas
 					obstruidas aconselha-se:</h3>
-				<label>Tratamento hormonal</label>
 				<div class="form-control">
 					<input name="resposta2" required type="radio" value="1">
-					<span>A técnica de FIV</span>
+					<span>Tratamento hormona</span>
 				</div>
 				<div class="form-control">
 					<input name="resposta2" required type="radio" value="2">
-					<span>A técnica da ICSI</span>
+					<span>A técnica de FIV</span>
 				</div>
 				<div class="form-control">
 					<input name="resposta2" required type="radio" value="3">
+					<span>A técnica da ICSI</span>
+				</div>
+				<div class="form-control">
+					<input name="resposta2" required type="radio" value="4">
 					<span>A indução da ovulação</span>
 				</div>
 				<hr>
@@ -274,17 +283,14 @@
 							filhos.</i>
 					</div>
 				</div>
-				<hr>
-				<div id="resultados">
-
-				</div>
-				<button type="submit">
-					Submeter
-				</button>
-				<button id="recomecarbtn" style="display: none">
-					Recomeçar
-				</button>
 			</div>
+			<hr>
+			<button type="submit">
+				Submeter
+			</button>
+			<button id="recomecarbtn" style="display: none" type="button">
+				Recomeçar
+			</button>
 		</form>
 	</div>
 </div>
@@ -320,6 +326,7 @@
 
 <!--START OF SCRIPTS-->
 <script src="assets/scripts/cookies.js" type="application/javascript"></script>
+<script src="assets/scripts/page-footer.js" type="application/javascript"></script>
 <script src="assets/scripts/page.js" type="application/javascript"></script>
 <script src="assets/scripts/quiz.js" type="application/javascript"></script>
 <!--END OF SCRIPTS-->

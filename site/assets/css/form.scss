@@ -38,11 +38,10 @@ form {
 
   .form-control {
     margin: 10px auto;
-
   }
 }
 
-form button {
+form button, form input[type=submit] {
   border-radius: 10px;
   background-color: #04AA6D;
   color: white;
@@ -53,7 +52,7 @@ form button {
   max-width: 300px;
 }
 
-form button:hover {
+form button:hover, form input[type=submit]:hover {
   opacity: 0.8;
 }
 
@@ -74,4 +73,9 @@ form span.psw {
 
 form .modal-content {
   width: 28%;
+}
+
+form textarea {
+  color: #24262b;
+  padding: 11px;
 }

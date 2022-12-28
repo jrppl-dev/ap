@@ -1,64 +1,105 @@
-var correcta1 = document.querySelector('#quizform input[name="resposta1"][value="1"]')
-var correcta2 = document.querySelector('#quizform input[name="resposta2"][value="1"]')
-var correcta3 = document.querySelector('#quizform input[name="resposta3"][value="4"]')
-var correcta4 = document.querySelector('#quizform input[name="resposta4"][value="3"]')
-var correcta5 = document.querySelector('#quizform input[name="resposta5"][value="2"]')
-var form = document.getElementById('quizform')
+const respostas = [
+    document.querySelector('#quizform input[name="resposta1"][value="1"]'),
+    document.querySelector('#quizform input[name="resposta2"][value="2"]'),
+    document.querySelector('#quizform input[name="resposta3"][value="4"]'),
+    document.querySelector('#quizform input[name="resposta4"][value="3"]'),
+    document.querySelector('#quizform input[name="resposta5"][value="2"]')
+]
+const form = document.getElementById('quizform')
+const maxTentativas = 3;
+/**
+ * https://www.w3schools.com/jsref/jsref_parseint.asp
+ */
+let tentativas = parseInt(getCookie('tentativas')) + 1;
+
+document.getElementById('counter').innerHTML = `
+    ${tentativas} de ${maxTentativas}
+    `;
 
 form.onsubmit = function (event) {
     event.preventDefault()
+    setCookie('tentativas', tentativas)
+
     var inputs = form.getElementsByTagName('input')
-    for (var i = 0; i < inputs.length; i++) {
+    for (let i = 0; i < inputs.length; i++) {
         inputs[i].closest('.form-control').style.display = 'none'
         inputs[i].disabled = true;
     }
-    correcta1.closest('.form-control').style.display = 'block'
-    correcta2.closest('.form-control').style.display = 'block'
-    correcta3.closest('.form-control').style.display = 'block'
-    correcta4.closest('.form-control').style.display = 'block'
-    correcta5.closest('.form-control').style.display = 'block'
 
-    correcta1.closest('.form-control').style.backgroundColor = 'green'
-    correcta2.closest('.form-control').style.backgroundColor = 'green'
-    correcta3.closest('.form-control').style.backgroundColor = 'green'
-    correcta4.closest('.form-control').style.backgroundColor = 'green'
-    correcta5.closest('.form-control').style.backgroundColor = 'green'
+    for (let element of respostas) {
+        element.closest('.form-control').style.display = 'block'
+    }
 
-    document.querySelector('#quizform input[name="resposta1"]:checked').closest('.form-control').style.display = 'block'
-    document.querySelector('#quizform input[name="resposta2"]:checked').closest('.form-control').style.display = 'block'
-    document.querySelector('#quizform input[name="resposta3"]:checked').closest('.form-control').style.display = 'block'
-    document.querySelector('#quizform input[name="resposta4"]:checked').closest('.form-control').style.display = 'block'
-    document.querySelector('#quizform input[name="resposta5"]:checked').closest('.form-control').style.display = 'block'
+    /** Nas respostas do utilizador, mostra a verde corretas e a vermelhor erradas */
+    let correct = 0;
+    let userAnswers = document.querySelectorAll('#quizform input:checked')
+    for (let element of userAnswers) {
+        element.closest('.form-control').style.display = 'block';
+        if (!respostas.includes(element)) {
+            element.closest('.form-control').textContent = '🔥 ' + element.closest('.form-control').textContent;
+        } else {
+            element.closest('.form-control').textContent = '✅ ' + element.closest('.form-control').textContent;
+            correct++;
+        }
+    }
+    /** Nas respostas não escolhidas pelo utilizador, mas corretas, mostra a verde */
+    let allAnswers = document.querySelectorAll('#quizform input:not(:checked)')
+    for (let element of allAnswers) {
+        if (respostas.includes(element)) {
+            element.closest('.form-control').style.backgroundColor = 'green';
+        }
+    }
+
+    document.querySelector('#resultados').style.display = 'block'
+    if (correct == 5) {
+        document.querySelector('#resultados').innerHTML = `
+        <h1>✨✨✨✨✨</h1>
+        <h1>Parabéns!</h1>
+        <h1>✨✨✨✨✨</h1>
+        <h2>Voçê acertou ${correct} de 5 perguntas</h2>  
+        `;
+        setCookie('tentativas', 0)
+        document.querySelector('#quizform button[type="submit"]').style.display = 'none'
+        document.querySelector('#quizform #recomecarbtn').style.display = 'block'
+        return
+    }
+
+    if (tentativas >= maxTentativas) {
+        /**
+         * Mostrar resultado
+         */
+        document.querySelector('#resultados').style.backgroundColor = '#ff00005e';
+        document.querySelector('#resultados').innerHTML = `
+        <h1>🚨🚨🚨🚨🚨</h1>
+        <h1>Errado!</h1>
+        <h1>🚨🚨🚨🚨🚨</h1>
+        <h2>Voçê acertou ${correct} de 5 perguntas</h2>  
+        `;
+
+        tentativas = 0
+        setCookie('tentativas', tentativas)
+        document.querySelector('#quizform button[type="submit"]').style.display = 'none'
+        document.querySelector('#quizform #recomecarbtn').style.display = 'block'
+        return
+    }
+    document.querySelector('#resultados').innerHTML = `
+        <h1>Tente novamente</h1>
+        <h2>Voçê acertou ${correct} de 5 perguntas</h2>  
+        `;
     document.querySelector('#quizform button[type="submit"]').style.display = 'none'
     document.querySelector('#quizform #recomecarbtn').style.display = 'block'
-
-    var correctas = 0;
-    if (correcta1.checked) {
-        correctas = correctas + 1;
-    }
-    if (correcta2.checked) {
-        correctas = correctas + 1;
-    }
-    if (correcta3.checked) {
-        correctas = correctas + 1;
-    }
-    if (correcta4.checked) {
-        correctas = correctas + 1;
-    }
-    if (correcta5.checked) {
-        correctas = correctas + 1;
-    }
-    document.querySelector('#resultados').innerHTML = '<h1>Resultados</h1>' + '<div>' +
-        'Voçê acertou ' + correctas + ' de 5 perguntas' +
-        '</div>'
-    document.querySelector('#resultados').style.display = 'block'
-    document.querySelector('#razao').style.display = 'block'
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    tentativas++;
 }
 
 /**
  * https://www.w3schools.com/jsref/met_loc_reload.asp
  */
 document.querySelector('#recomecarbtn').onclick = function () {
-    location.reload();
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    if (tentativas > maxTentativas) {
+        setCookie('tentativas', 0)
+    }
 
+    location.reload();
 }

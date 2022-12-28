@@ -6,7 +6,7 @@ var closeBtn = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal
 var modalButtons = document.getElementsByClassName("btn-modal")
 
-for (var i = 0; i < modalButtons.length; i++) {
+for (let i = 0; i < modalButtons.length; i++) {
     modalButtons[i].onclick = function () {
         modal.style.display = "block";
     }
