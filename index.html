@@ -14,14 +14,14 @@
 <div class="pg-content">
 	<div class="content">
 		<h1>Login</h1>
-		<form action="site/pages/area_reservada.html">
+		<form id="login-formulario">
 			<label><b>Utilizador</b></label>
 			<div class="form-control">
-				<input name="user" placeholder="user" required type="text" value="user">
+				<input name="username" placeholder="user123" required type="text" value="">
 			</div>
 			<label><b>Password</b></label>
 			<div class="form-control">
-				<input name="password" placeholder="123" required type="password" value="123">
+				<input name="password" placeholder="123" required type="password" value="">
 			</div>
 			<button type="submit">Login</button>
 		</form>
@@ -30,7 +30,7 @@
 <footer class="pg-footer"></footer>
 
 <video autoplay id="background-video" loop muted>
-	<source src="site/assets/background.mp4" type="video/mp4">
+	<source src="site/assets/video.mp4" type="video/mp4">
 	Your browser does not support HTML5 video.
 </video>
 
@@ -43,6 +43,8 @@
 	<span class="icon on">🔊</span>
 	<span class="icon off" style="display: none">🔇</span>
 </a>
-<script src="site/assets/scripts/sound.js" type="application/javascript"></script>
+
+<script src="site/assets/scripts/login.js" type="application/javascript"></script>
+<script src="site/assets/scripts/som.js" type="application/javascript"></script>
 </body>
 </html>

@@ -1,4 +1,9 @@
 /**
+ * Consulta:
+ * https://www.w3schools.com/js/js_cookies.asp
+ * https://www.w3schools.com/js/tryit.asp?filename=tryjs_cookie_username
+ */
+/**
  * Gravar dado de utilizador
  */
 function setCookie(cname, cvalue, exdays) {
@@ -10,8 +15,6 @@ function setCookie(cname, cvalue, exdays) {
 
 /**
  * Buscar dado de utilizador
- * @param cname
- * @returns {string}
  */
 function getCookie(cname) {
     let name = cname + "=";
@@ -28,9 +31,3 @@ function getCookie(cname) {
     return "";
 }
 
-
-/**
- * Referencias:
- * https://www.w3schools.com/js/js_cookies.asp
- * https://www.w3schools.com/js/tryit.asp?filename=tryjs_cookie_username
- */

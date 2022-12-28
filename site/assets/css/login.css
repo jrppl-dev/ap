@@ -33,6 +33,8 @@ body {
 }
 .login .pg-content {
   height: 80%;
+  width: 60%;
+  margin: 0 auto;
   background-color: rgba(36, 38, 43, 0.6392156863);
   display: flex;
   align-items: center;

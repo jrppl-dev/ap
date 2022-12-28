@@ -295,6 +295,78 @@
 	</div>
 </div>
 <footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="footer-col">
+				<h4>Manipulação da Fertilidade</h4>
+				<ul id="footer-links">
+					<li>
+						<a class="dropdown-item linkable" href="#historia">📚 História</a>
+					</li>
+					<li>
+						<a class="dropdown-item linkable" href="#o_que">🔬 O que é?</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="pages/tecnicas.html"> 🏥 Técnicas de Reprodução Humanamente
+							Assistidas </a>
+					</li>
+					<li>
+						<a class="dropdown-item linkable" href="#conselhos">🦉 Conselhos</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="pages/fatores/fatoresF.html">👩 Femininos</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="pages/fatores/fatoresM.html">🧑 Masculinos</a>
+					</li>
+					<li>
+						<a class="dropdown-item linkable" href="#quiz">🎲 Quiz</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4>Links Úteis</h4>
+				<ul>
+					<li>
+						<a href="https://www.lusiadas.pt/hospitais-clinicas/hospital-lusiadas-lisboa/servicos/procriacao-medicamente-assistida">Lusíadas</a>
+					</li>
+					<li>
+						<a href="https://www.medicalport.org/pt/procedimentos-medicos-turismo/procriacao-medicamente-assistida/procriacao-medicamente-assistida">MedicalPort</a>
+					</li>
+					<li>
+						<a href="https://dre.pt/dre/legislacao-consolidada/lei/2006-34529775">Legislação Portuguesa</a>
+					</li>
+					<li>
+						<a href="https://ceti.pt">CETI</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4>Realizado por:</h4>
+				<ul>
+					<li>
+						<a href="mailto:marianabarata727@gmail.com">Mariana Barata (727)</a>
+					</li>
+					<li>
+						<a href="mailto:leonorbras2005@gmail.com">Leonor Brás (579)</a>
+					</li>
+					<li>
+						<a href="mailto:laurabras2005@gmail.com">Laura Brás (578)</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4>Comentário:</h4>
+				<form>
+					<label for="Comentário"></label>
+					<div class="form-control">
+						<textarea cols="30" form="usrform" name="comment" placeholder="Mensagem" rows="6"></textarea>
+					</div>
+					<input type="submit" value="Enviar">
+				</form>
+			</div>
+		</div>
+	</div>
 </footer>
 
 <script type="application/javascript">
@@ -305,34 +377,30 @@
 	function calcularperiodo() {
 		var fim = new Date(document.getElementById('data').value);
 		fim.setDate(fim.getUTCDate() + 14);
-		console.log(fim)
 		var inicio = new Date(document.getElementById('data').value);
-		inicio.setDate(inicio.getUTCDate() + 11)
-		console.log(inicio)
-		console.log(fim)
+		inicio.setDate(inicio.getUTCDate() + 11);
 
-		inicio = inicio.getUTCDate() + ' de ' + meses[inicio.getUTCMonth()] + ' de ' + inicio.getUTCFullYear()
-		fim = fim.getUTCDate() + ' de ' + meses[fim.getUTCMonth()] + ' de ' + fim.getUTCFullYear()
+		inicio = inicio.getUTCDate() + ' de ' + meses[inicio.getUTCMonth()] + ' de ' + inicio.getUTCFullYear();
+		fim = fim.getUTCDate() + ' de ' + meses[fim.getUTCMonth()] + ' de ' + fim.getUTCFullYear();
 
-		var fertil = document.getElementById('fertil')
-		fertil.innerHTML = inicio + ' a ' + fim
+		var fertil = document.getElementById('fertil');
+		fertil.innerHTML = inicio + ' a ' + fim;
 
-		var ovulacao = document.getElementById('ovulacao')
-		var data = new Date(document.getElementById('data').value)
+		var ovulacao = document.getElementById('ovulacao');
+		var data = new Date(document.getElementById('data').value);
 		data.setDate(data.getUTCDate() + 13);
-		ovulacao.innerHTML = data.getUTCDate() + ' de ' + meses[data.getUTCMonth()] + ' de ' + data.getUTCFullYear()
+		ovulacao.innerHTML = data.getUTCDate() + ' de ' + meses[data.getUTCMonth()] + ' de ' + data.getUTCFullYear();
 	}
 </script>
 
 <!--START OF SCRIPTS-->
-<script src="assets/scripts/cookies.js" type="application/javascript"></script>
-<script src="assets/scripts/page-footer.js" type="application/javascript"></script>
-<script src="assets/scripts/page.js" type="application/javascript"></script>
+<script src="assets/scripts/dados.js" type="application/javascript"></script>
+<script src="assets/scripts/pagina.js" type="application/javascript"></script>
 <script src="assets/scripts/quiz.js" type="application/javascript"></script>
 <!--END OF SCRIPTS-->
 
 <video autoplay id="background-video" loop muted>
-	<source src="assets/background.mp4" type="video/mp4">
+	<source src="assets/video.mp4" type="video/mp4">
 	Your browser does not support HTML5 video.
 </video>
 </body>
