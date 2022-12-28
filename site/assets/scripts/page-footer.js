@@ -67,6 +67,9 @@ function adicionarFooterLinks() {
             html += footerLinks.innerHTML + '<li>' + link.closest('li').innerHTML + '</li>';
         }
     }
+    if (links.length == 0) {
+        document.querySelector('#footer-links').closest('.footer-col').remove()
+    }
     footerLinks.innerHTML = html;
 }
 

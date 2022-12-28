@@ -86,6 +86,9 @@ function startUserPreferences() {
     if (!getCookie('img') || !getCookie('img').toString().includes('.png')) {
         setCookie('img', 'img1.png')
     }
+    if (!getCookie('username')) {
+        setCookie('username', 'Utilizador 1')
+    }
     /** Actualizar nome utilizador */
     if (document.getElementById('username')) {
         document.getElementById('username').innerHTML = getCookie('username')
