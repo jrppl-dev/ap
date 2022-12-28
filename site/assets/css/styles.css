@@ -123,10 +123,10 @@ body .dropdown-item {
   background-color: transparent;
   border: 0;
 }
-body .unlinkable {
+body .unlink {
   text-decoration: none !important;
 }
-body .linkable:hover {
+body .link:hover {
   text-decoration: underline;
 }
 body .dropdown-item.active {

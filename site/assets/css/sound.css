@@ -34,11 +34,11 @@
     transform: scale(1.3);
 }
 
-.btn-sound.is-clicked {
+.btn-sound.active {
     background: linear-gradient(to bottom, gray 0%, dimgray 100%);
 }
 
-.btn-sound.is-clicked:before {
+.btn-sound.active:before {
     animation: blastOut 1s;
 }
 

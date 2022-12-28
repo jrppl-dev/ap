@@ -12,24 +12,24 @@
 <header class="pg-header">
 	<div class="topnav">
 		<div class="dropdown" id="menu">
-			<a aria-expanded="false" class="btn btn-secondary dropdown-toggle linkable" data-bs-toggle="dropdown"
+			<a aria-expanded="false" class="btn btn-secondary dropdown-toggle link" data-bs-toggle="dropdown"
 			   href="#fertilidade" role="button"> Ξ Manipulação da Fertilidade </a>
 			<ul class="dropdown-menu">
 				<li>
-					<a class="dropdown-item linkable" href="#historia">📚 História</a>
+					<a class="dropdown-item link" href="#historia">📚 História</a>
 				</li>
 				<li>
-					<a class="dropdown-item linkable" href="#o_que">🔬 O que é?</a>
+					<a class="dropdown-item link" href="#o_que">🔬 O que é?</a>
 				</li>
 				<li>
 					<a class="dropdown-item" href="pages/tecnicas.html"> 🏥 Técnicas de Reprodução Humanamente
 						Assistidas </a>
 				</li>
 				<li>
-					<a class="dropdown-item linkable" href="#conselhos">🦉 Conselhos</a>
+					<a class="dropdown-item link" href="#conselhos">🦉 Conselhos</a>
 				</li>
 				<li class="dropdown dropend">
-					<a aria-expanded="false" aria-haspopup="true" class="dropdown-item dropdown-toggle unlinkable"
+					<a aria-expanded="false" aria-haspopup="true" class="dropdown-item dropdown-toggle unlink"
 					   data-bs-toggle="dropdown" href="#">🔎 Fatores de Infertilidade
 					</a>
 					<ul class="dropdown-menu">
@@ -42,7 +42,7 @@
 					</ul>
 				</li>
 				<li>
-					<a class="dropdown-item linkable" href="#quiz">🎲 Quiz</a>
+					<a class="dropdown-item link" href="#quiz">🎲 Quiz</a>
 				</li>
 			</ul>
 		</div>
@@ -111,7 +111,7 @@
 			<p>Estatísticas mundiais apontam que cerca de 15% dos casais que desejam engravidar não conseguem.</p>
 			<img class="center" src="https://www.grupohpa.com/uploads/media/c913e595180c00813f9281938c3ebab3.jpg">
 			<br>
-			<form id="Calculo">
+			<form id="Calculo" onsubmit="calcularperiodo(document.getElementById('profile-form'))">
 				<div>
 					<label><b>1º dia da menstruação</b></label>
 					<div class="form-control">
@@ -141,7 +141,7 @@
 						<p>Próxima ovulação: <span id="ovulacao"></span></p>
 						<p>Período fértil: <span id="fertil"></span></p>
 					</div>
-					<button onclick="calcularperiodo(document.getElementById('profile-form'));" type="submit">Calcular
+					<button type="submit">Calcular
 					</button>
 				</div>
 			</form>
@@ -301,17 +301,17 @@
 				<h4>Manipulação da Fertilidade</h4>
 				<ul id="footer-links">
 					<li>
-						<a class="dropdown-item linkable" href="#historia">📚 História</a>
+						<a class="dropdown-item link" href="#historia">📚 História</a>
 					</li>
 					<li>
-						<a class="dropdown-item linkable" href="#o_que">🔬 O que é?</a>
+						<a class="dropdown-item link" href="#o_que">🔬 O que é?</a>
 					</li>
 					<li>
 						<a class="dropdown-item" href="pages/tecnicas.html"> 🏥 Técnicas de Reprodução Humanamente
 							Assistidas </a>
 					</li>
 					<li>
-						<a class="dropdown-item linkable" href="#conselhos">🦉 Conselhos</a>
+						<a class="dropdown-item link" href="#conselhos">🦉 Conselhos</a>
 					</li>
 					<li>
 						<a class="dropdown-item" href="pages/fatores/fatoresF.html">👩 Femininos</a>
@@ -320,7 +320,7 @@
 						<a class="dropdown-item" href="pages/fatores/fatoresM.html">🧑 Masculinos</a>
 					</li>
 					<li>
-						<a class="dropdown-item linkable" href="#quiz">🎲 Quiz</a>
+						<a class="dropdown-item link" href="#quiz">🎲 Quiz</a>
 					</li>
 				</ul>
 			</div>

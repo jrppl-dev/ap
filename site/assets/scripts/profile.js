@@ -1,3 +1,10 @@
+/**
+ * Consulta
+ * https://www.w3schools.com/js/js_input_examples.asp
+ */
+/**
+ * Guardar informação do utilizador
+ */
 function gravarDados(form)
 //this should set the UserName cookie to the proper value;
 {
@@ -11,9 +18,15 @@ function gravarDados(form)
     setCookie("r3", form.r3.checked);
 }
 
+/**
+ * Mostrar dados do utilizador
+ */
 function preencherDados(form, actualizar)
 //this should set the UserName cookie to the proper value;
 {
+    /**
+     * Quando estamos na pagina area_reservada, mostra a imagem escolhida
+     */
     if (actualizar) {
         form.querySelector('img').src = '../assets/img/profile/' + getCookie("img");
     }
@@ -28,6 +41,9 @@ function preencherDados(form, actualizar)
     form.r1.checked = false;
     form.r2.checked = false;
     form.r3.checked = false;
+    /**
+     * Se as respostas estiverem corretas, mostra a pagina ao utilizador como sugestão
+     */
     if (getCookie("r1") == 'true') {
         form.r1.checked = true;
         if (form.r1.closest('.form-control').querySelector('.help')) {
