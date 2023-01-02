@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manipulação da Fertilidade</title>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="../assets/css/styles.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/form.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/boxes.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+		.comment{
+			font-size: 15px;
+			background: #00447799;
+			padding: 10px 14px;
+			border-radius: 10px;
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+	</style>
+</head>
+<body>
+<header class="pg-header">
+	<div class="topnav">
+		<a aria-expanded="false" class="btn btn-secondary btn-return link" href="../index.html" role="button"
+		   style="">
+			↩
+		</a>
+		<ul class="breadcrumb-utilizador">
+			<li>
+				<img class="perfil-thumbnail" id="img" src="../"/>
+			</li>
+			<li>
+				<a href="area_reservada.html" id="username"></a>
+			</li>
+		</ul>
+		<div id="date"></div>
+	</div>
+</header>
+<div class="pg-content">
+	<div class="content" style="width: 50%">
+		<h1> Comentários </h1>
+		<div >
+			<ul id="comentarios" >
+
+			</ul>
+		</div>
+	</div>
+</div>
+<footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="footer-col">
+				<h4>Manipulação da Fertilidade</h4>
+				<ul id="footer-links">
+					<li>
+						<a class="dropdown-item " href="../index.html#historia">📚 História</a>
+					</li>
+					<li>
+						<a class="dropdown-item " href="../index.html#o_que">🔬 O que é?</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="tecnicas.html"> 🏥 Técnicas de Reprodução Humanamente
+							Assistidas </a>
+					</li>
+					<li>
+						<a class="dropdown-item " href="../index.html#conselhos">🦉 Conselhos</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="fatores/fatoresF.html">👩 Femininos</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="fatores/fatoresM.html">🧑 Masculinos</a>
+					</li>
+					<li>
+						<a class="dropdown-item " href="../index.html#quiz">🎲 Quiz</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4>Links Úteis</h4>
+				<ul>
+					<li>
+						<a href="https://www.lusiadas.pt/hospitais-clinicas/hospital-lusiadas-lisboa/servicos/procriacao-medicamente-assistida">Lusíadas</a>
+					</li>
+					<li>
+						<a href="https://www.medicalport.org/pt/procedimentos-medicos-turismo/procriacao-medicamente-assistida/procriacao-medicamente-assistida">MedicalPort</a>
+					</li>
+					<li>
+						<a href="https://dre.pt/dre/legislacao-consolidada/lei/2006-34529775">Legislação Portuguesa</a>
+					</li>
+					<li>
+						<a href="https://ceti.pt">CETI</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4>Realizado por:</h4>
+				<ul>
+					<li>
+						<a href="mailto:marianabarata727@gmail.com">Mariana Barata (727)</a>
+					</li>
+					<li>
+						<a href="mailto:leonorbras2005@gmail.com">Leonor Brás (579)</a>
+					</li>
+					<li>
+						<a href="mailto:laurabras2005@gmail.com">Laura Brás (578)</a>
+					</li>
+					<li>
+						<a href="mailto:diogorodriguesgomessilva@gmail.com">Diogo Silva (637)</a>
+					</li>
+					<li>
+						<a href="mailto:miguelbvaldrez@gmail.com">Miguel Valdrez (260)</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer-col" id="commentsFooter">
+
+			</div>
+		</div>
+	</div>
+</footer>
+<!--SCRIPTS-->
+<script src="../assets/scripts/dados.js" type="application/javascript"></script>
+<script src="../assets/scripts/pagina.js" type="application/javascript"></script>
+
+<script type="application/javascript">
+	/**
+	 * Mostra a list de comentários
+	 */
+	function mostrarComentariosLista(){
+		let comentarios = retornarDado('comentarios');
+		if (!comentarios){
+			comentarios = [];
+		}else{
+			comentarios = JSON.parse(comentarios);
+		}
+		let html = '';
+
+		for (let i=0; i < comentarios.length; i++){
+			html += "<li>" +
+					"Comentário: " +
+					"<div class='comment'>" +
+					comentarios[i] +
+					"</div>" +
+					"</li>";
+		}
+
+		document.getElementById('comentarios').innerHTML = html
+	}
+	mostrarComentariosLista();
+</script>
+<!--END OF SCRIPTS-->
+
+<video autoplay id="background-video" loop muted>
+	<source src="../assets/video.mp4" type="video/mp4">
+	Your browser does not support HTML5 video.
+</video>
+</body>
+</html>
