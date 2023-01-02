@@ -44,6 +44,9 @@
 				<li>
 					<a class="dropdown-item link" href="#quiz">🎲 Quiz</a>
 				</li>
+				<li>
+					<a class="dropdown-item link" href="pages/comentarios.html">🗣 Comentários</a>
+				</li>
 			</ul>
 		</div>
 		<ul class="breadcrumb">
@@ -111,7 +114,7 @@
 			<p>Estatísticas mundiais apontam que cerca de 15% dos casais que desejam engravidar não conseguem.</p>
 			<img class="center" src="https://www.grupohpa.com/uploads/media/c913e595180c00813f9281938c3ebab3.jpg">
 			<br>
-			<form id="Calculo" onsubmit="calcularperiodo(document.getElementById('profile-form'))">
+			<form id="formulario-calculador" onsubmit="return calcularperiodo(event)">
 				<div>
 					<label><b>1º dia da menstruação</b></label>
 					<div class="form-control">
@@ -353,17 +356,16 @@
 					<li>
 						<a href="mailto:laurabras2005@gmail.com">Laura Brás (578)</a>
 					</li>
+					<li>
+						<a href="mailto:diogorodriguesgomessilva@gmail.com">Diogo Silva (637)</a>
+					</li>
+					<li>
+						<a href="mailto:miguelbvaldrez@gmail.com">Miguel Valdrez (260)</a>
+					</li>
 				</ul>
 			</div>
-			<div class="footer-col">
-				<h4>Comentário:</h4>
-				<form>
-					<label for="Comentário"></label>
-					<div class="form-control">
-						<textarea cols="30" form="usrform" name="comment" placeholder="Mensagem" rows="6"></textarea>
-					</div>
-					<input type="submit" value="Enviar">
-				</form>
+			<div class="footer-col" id="commentsFooter">
+
 			</div>
 		</div>
 	</div>
@@ -374,7 +376,8 @@
 	var meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho",
 		"Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
-	function calcularperiodo() {
+	function calcularperiodo(event) {
+		event.preventDefault()
 		var fim = new Date(document.getElementById('data').value);
 		fim.setDate(fim.getUTCDate() + 14);
 		var inicio = new Date(document.getElementById('data').value);
@@ -390,6 +393,7 @@
 		var data = new Date(document.getElementById('data').value);
 		data.setDate(data.getUTCDate() + 13);
 		ovulacao.innerHTML = data.getUTCDate() + ' de ' + meses[data.getUTCMonth()] + ' de ' + data.getUTCFullYear();
+		return true;
 	}
 </script>
 

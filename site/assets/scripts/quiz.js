@@ -16,7 +16,7 @@ const maxTentativas = 3;
  */
 
 /** Guarda o numero de tentativas */
-let tentativas = getCookie('tentativas') || 1;
+let tentativas = retornarDado('tentativas') || 1;
 /** Mostra no formulario  */
 document.getElementById('counter').innerHTML = `
     ${tentativas} de ${maxTentativas}
@@ -25,7 +25,7 @@ document.getElementById('counter').innerHTML = `
 form.onsubmit = function (event) {
     event.preventDefault();
     /** Guarda tentativas */
-    setCookie('tentativas', tentativas);
+    gravarDado('tentativas', tentativas);
 
     /** Esconde todos os elementos que contêm inputs e desativa */
     var inputs = form.getElementsByTagName('input');
@@ -68,7 +68,7 @@ form.onsubmit = function (event) {
         <h1>✨✨✨✨✨</h1>
         <h2>Voçê acertou ${correct} de 5 perguntas</h2>  
         `;
-        setCookie('tentativas', 1);
+        gravarDado('tentativas', 1);
         document.querySelector('#quizform button[type="submit"]').style.display = 'none';
         document.querySelector('#quizform #recomecarbtn').style.display = 'block';
         /** Termina */
@@ -89,7 +89,7 @@ form.onsubmit = function (event) {
         `;
 
         tentativas = 0;
-        setCookie('tentativas', tentativas);
+        gravarDado('tentativas', tentativas);
         document.querySelector('#quizform button[type="submit"]').style.display = 'none';
         document.querySelector('#quizform #recomecarbtn').style.display = 'block';
         /** Termina */
@@ -111,7 +111,7 @@ form.onsubmit = function (event) {
      * Aumenta numero de tentativas e guarda o valor
      */
     tentativas++;
-    setCookie('tentativas', tentativas);
+    gravarDado('tentativas', tentativas);
 };
 
 /**
@@ -124,7 +124,7 @@ form.onsubmit = function (event) {
 document.querySelector('#recomecarbtn').onclick = function () {
     window.scrollTo({top: 0, behavior: 'smooth'});
     if (tentativas > maxTentativas) {
-        setCookie('tentativas', 1);
+        gravarDado('tentativas', 1);
     }
 
     location.reload();

@@ -8,7 +8,7 @@ formulario.onsubmit = function (e) {
      */
     e.preventDefault();
     if (
-        this.querySelector('input[name=username]').value === 'user123' && this.querySelector('input[name=password]').value === '123'
+        this.querySelector('input[name=username]').value === 'user1' && this.querySelector('input[name=password]').value === 'pass1'
     ) {
         /**
          *  Mostra input boxes a verde em caso de correcto
@@ -29,3 +29,4 @@ formulario.onsubmit = function (e) {
         this.querySelector('input[name=password]').value = '';
     }
 };
+

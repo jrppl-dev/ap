@@ -24,7 +24,7 @@ function iniciarMenu() {
                 subPages[j].style.display = 'none';
             }
 
-            if (document.querySelector(".content." + content)) {
+            if (content && document.querySelector(".content." + content)) {
                 document.querySelector(".content." + content).style.display = 'block';
             }
 
@@ -88,25 +88,25 @@ function iniciarRelogio() {
  * Personalizar a página com os dados do utilizador
  */
 function personalizarPagina() {
-    if (!getCookie('img') || !getCookie('img').toString().includes('.png')) {
-        setCookie('img', 'img1.png');
+    if (!retornarDado('img') || !retornarDado('img').toString().includes('.png')) {
+        gravarDado('img', 'img1.png');
     }
-    if (!getCookie('username')) {
-        setCookie('username', 'Utilizador 1');
+    if (!retornarDado('name')) {
+        gravarDado('name', 'Utilizador 1');
     }
     /** Actualizar nome utilizador */
     if (document.getElementById('username')) {
-        document.getElementById('username').innerHTML = getCookie('username');
+        document.getElementById('username').innerHTML = retornarDado('name');
     }
     /** Atualizar imagem thumbnail utilizador */
     if (document.getElementById('img')) {
-        document.getElementById('img').src = document.getElementById('img').src + 'assets/img/profile/' + getCookie('img');
+        document.getElementById('img').src = document.getElementById('img').src + 'assets/img/profile/' + retornarDado('img');
     }
 
     /** Personalizar página com base no género */
-    if (getCookie('genero')) {
+    if (retornarDado('genero')) {
         document.querySelector('body').classList.add('normal');
-        if (getCookie('genero') == 'f') {
+        if (retornarDado('genero') == 'f') {
             document.querySelector('body').classList.remove('normal');
             document.querySelector('body').classList.add('girl');
         }
@@ -124,8 +124,52 @@ function abrirPagina() {
         if (document.querySelector(".content")) {
             document.querySelector(".content").style.display = 'none';
         }
-        if (document.querySelector(".content." + content)) {
+        if (content && document.querySelector(".content." + content)) {
             document.querySelector(".content." + content).style.display = 'block';
+        }
+    }
+}
+
+function adicionarFormularioComentarios(){
+    const commentsFooter = document.getElementById('commentsFooter')
+    if(commentsFooter){
+        commentsFooter.innerHTML = `
+            <h4>Comentário:</h4>
+            <form id="formularioComentar">
+                <label for="Comentário"></label>
+                <div class="form-control">
+                    <textarea cols="30" name="texto" placeholder="Mensagem" rows="6"></textarea>
+                </div>
+                <input type="submit" value="Enviar">
+            </form>
+        `
+        /**
+         * Gravar comentarios
+         * https://www.w3schools.com/jsref/jsref_isarray.asp
+         * https://www.grepper.com/tpc/store+data+in+local+storage
+         */
+        const formularioComentar = document.getElementById('formularioComentar')
+        if(formularioComentar){
+            formularioComentar.onsubmit = function(event){
+                event.preventDefault()
+
+                let comentarios = retornarDado('comentarios');
+                if (!comentarios){
+                    comentarios = [];
+                }else{
+                    comentarios = JSON.parse(comentarios);
+                }
+
+                const mensagem = formularioComentar.querySelector('textarea[name=texto]');
+                comentarios.push(mensagem.value);
+                gravarDado('comentarios', JSON.stringify(comentarios));
+                mensagem.value = ''
+
+                if (typeof mostrarComentariosLista !== "undefined"){
+                    mostrarComentariosLista()
+                }
+            }
+
         }
     }
 }
@@ -135,3 +179,4 @@ iniciarRelogio();
 personalizarPagina();
 
 abrirPagina();
+adicionarFormularioComentarios();
